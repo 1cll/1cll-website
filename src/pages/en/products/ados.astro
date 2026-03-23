@@ -118,6 +118,11 @@ const vcsProviders = [
                 <div class="terminal-line output">
                   <span class="log-time">09:00:01</span>
                   <span class="log-info">INFO</span>
+                  <span>Leader elected (node-1, token: 7f3d)</span>
+                </div>
+                <div class="terminal-line output">
+                  <span class="log-time">09:00:01</span>
+                  <span class="log-info">INFO</span>
                   <span>Watching 5 repositories...</span>
                 </div>
                 <div class="terminal-line output">
@@ -128,12 +133,32 @@ const vcsProviders = [
                 <div class="terminal-line output">
                   <span class="log-time">09:00:16</span>
                   <span class="log-agent">AGENT</span>
-                  <span>Claude Code processing...</span>
+                  <span>Claude Code processing #42...</span>
+                </div>
+                <div class="terminal-line output">
+                  <span class="log-time">09:02:33</span>
+                  <span class="log-agent">AGENT</span>
+                  <span>Running test suite (47 tests)...</span>
+                </div>
+                <div class="terminal-line output">
+                  <span class="log-time">09:03:10</span>
+                  <span class="log-success">PASS</span>
+                  <span>All 47 tests passed</span>
                 </div>
                 <div class="terminal-line output">
                   <span class="log-time">09:03:42</span>
                   <span class="log-success">OK</span>
                   <span>PR #43 created successfully</span>
+                </div>
+                <div class="terminal-line output">
+                  <span class="log-time">09:05:01</span>
+                  <span class="log-info">INFO</span>
+                  <span>Scheduled task: dep-update (api-srv)</span>
+                </div>
+                <div class="terminal-line output">
+                  <span class="log-time">09:05:02</span>
+                  <span class="log-agent">AGENT</span>
+                  <span>Copilot processing dep-update...</span>
                 </div>
               </div>
             </div>
@@ -380,11 +405,12 @@ const vcsProviders = [
 
   .terminal-mockup {
     width: 100%;
-    max-width: 480px;
+    max-width: 520px;
     background: #1e1e2e;
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-xl);
+    box-shadow: var(--shadow-xl), 0 0 60px rgba(139, 92, 246, 0.15);
     overflow: hidden;
+    border: 1px solid rgba(139, 92, 246, 0.25);
   }
 
   .terminal-header {

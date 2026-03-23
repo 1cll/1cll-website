@@ -129,13 +129,18 @@ const features = [
                   <span class="tdot yellow"></span>
                   <span class="tdot green"></span>
                 </div>
+                <span class="terminal-preview-title">ados</span>
               </div>
               <div class="terminal-preview-body">
-                <div class="tline"><span class="tprompt">$</span> ados start</div>
-                <div class="tline"><span class="tinfo">INFO</span> Watching repos...</div>
-                <div class="tline"><span class="tinfo">INFO</span> Issue #42 detected</div>
-                <div class="tline"><span class="tagent">AGENT</span> AI processing...</div>
-                <div class="tline"><span class="tok">OK</span> PR #43 created</div>
+                <div class="tline"><span class="tprompt">$</span> ados start --config ados.yaml</div>
+                <div class="tline"><span class="ttime">09:00:01</span> <span class="tinfo">INFO</span> Watching 5 repositories...</div>
+                <div class="tline"><span class="ttime">09:00:15</span> <span class="tinfo">INFO</span> Issue #42 detected in myapp</div>
+                <div class="tline"><span class="ttime">09:00:16</span> <span class="tagent">AGENT</span> Claude Code processing...</div>
+                <div class="tline"><span class="ttime">09:02:33</span> <span class="tagent">AGENT</span> Running tests...</div>
+                <div class="tline"><span class="ttime">09:03:10</span> <span class="tinfo">INFO</span> All 47 tests passed</div>
+                <div class="tline"><span class="ttime">09:03:42</span> <span class="tok">OK</span> PR #43 created successfully</div>
+                <div class="tline"><span class="ttime">09:05:01</span> <span class="tinfo">INFO</span> Issue #44 detected in api-srv</div>
+                <div class="tline"><span class="ttime">09:05:02</span> <span class="tagent">AGENT</span> Copilot processing...</div>
               </div>
             </div>
           </div>
@@ -200,6 +205,13 @@ const features = [
                         <div class="stat-label">/km</div>
                       </div>
                     </div>
+                  </div>
+                  <div class="weekly-bar">
+                    <div class="weekly-label">Weekly mileage</div>
+                    <div class="weekly-progress">
+                      <div class="weekly-fill"></div>
+                    </div>
+                    <div class="weekly-text">32.5 / 50 km</div>
                   </div>
                   <div class="ai-chat">
                     <div class="ai-avatar">🤖</div>
@@ -269,19 +281,25 @@ const features = [
                 <div class="mp-sky">
                   <div class="mp-cloud mp-cloud-1"></div>
                   <div class="mp-cloud mp-cloud-2"></div>
+                  <div class="mp-cloud mp-cloud-3"></div>
                 </div>
-                <div class="mp-mountains">
-                  <div class="mp-mountain mp-mountain-back"></div>
-                  <div class="mp-mountain mp-mountain-mid"></div>
-                  <div class="mp-mountain mp-mountain-front"></div>
-                </div>
-                <div class="mp-trail">
-                  <svg viewBox="0 0 280 220" class="mp-trail-svg">
-                    <path d="M 15 200 Q 50 170 75 145 Q 100 120 125 100 Q 155 75 175 60 Q 200 45 230 25" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="6 3" stroke-linecap="round"/>
-                    <circle cx="15" cy="200" r="4" fill="#22c55e"/>
-                    <circle cx="230" cy="25" r="4" fill="#ef4444"/>
-                  </svg>
-                </div>
+                <svg class="mp-scene-svg" viewBox="0 0 360 220" preserveAspectRatio="xMidYMax slice">
+                  <path d="M -20 220 L 60 70 Q 75 50 90 65 L 120 95 Q 130 80 140 85 L 200 220 Z" fill="#6b8e73"/>
+                  <path d="M 60 70 Q 75 50 90 65 L 85 75 Q 75 60 68 72 Z" fill="white" opacity="0.7"/>
+                  <path d="M 80 220 L 170 35 Q 185 15 200 30 L 220 55 Q 230 45 240 50 L 300 220 Z" fill="#4a7c59"/>
+                  <path d="M 170 35 Q 185 15 200 30 L 195 42 Q 185 25 175 38 Z" fill="white" opacity="0.8"/>
+                  <path d="M 220 55 Q 225 48 230 50 L 228 56 Z" fill="white" opacity="0.5"/>
+                  <path d="M 200 220 L 280 75 Q 295 55 310 70 L 330 95 Q 340 88 350 92 L 380 220 Z" fill="#3d6b4e"/>
+                  <path d="M 280 75 Q 295 55 310 70 L 305 80 Q 295 62 285 78 Z" fill="white" opacity="0.7"/>
+                  <path d="M 20 210 L 25 190 L 22 192 L 27 178 L 24 180 L 28 170 L 32 180 L 29 178 L 34 192 L 31 190 L 35 210 Z" fill="#2d5a3a" opacity="0.7"/>
+                  <path d="M 45 215 L 49 198 L 47 200 L 51 188 L 49 190 L 52 182 L 55 190 L 53 188 L 57 200 L 55 198 L 58 215 Z" fill="#2d5a3a" opacity="0.6"/>
+                  <path d="M 320 215 L 324 200 L 322 202 L 326 192 L 324 194 L 327 186 L 330 194 L 328 192 L 332 202 L 330 200 L 334 215 Z" fill="#1e4a2e" opacity="0.7"/>
+                  <path d="M 340 218 L 343 205 L 341 207 L 345 198 L 348 207 L 346 205 L 349 218 Z" fill="#1e4a2e" opacity="0.5"/>
+                  <path d="M 15 205 Q 50 180 80 155 Q 110 130 140 110 Q 170 90 195 70 Q 215 55 240 35" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="6 3" stroke-linecap="round"/>
+                  <circle cx="15" cy="205" r="4" fill="#22c55e"/>
+                  <circle cx="140" cy="110" r="3.5" fill="#f59e0b"/>
+                  <circle cx="240" cy="35" r="4" fill="#ef4444"/>
+                </svg>
                 <div class="mp-overlay">
                   <div class="mp-stat">
                     <span class="mp-stat-val">9,340ft</span>
@@ -292,6 +310,53 @@ const features = [
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Work Section -->
+    <section class="section client-work">
+      <div class="container">
+        <div class="section-title">
+          <h2>Client Projects</h2>
+          <p>Projects we've delivered for our clients</p>
+        </div>
+
+        <div class="client-grid">
+          <div class="client-card">
+            <div class="client-icon">🪪</div>
+            <h3>JAC Member Card App</h3>
+            <p class="client-org">Japanese Alpine Club</p>
+            <p class="client-desc">Digital membership card with QR code authentication and member benefit search for the Japanese Alpine Club.</p>
+            <div class="client-tech">
+              <span>Next.js</span>
+              <span>Firebase</span>
+              <span>Tailwind CSS</span>
+            </div>
+          </div>
+
+          <div class="client-card">
+            <div class="client-icon">👥</div>
+            <h3>JAC Youth Club Manager</h3>
+            <p class="client-org">JAC Youth Club</p>
+            <p class="client-desc">Membership approval workflow with Google Group integration for the Japanese Alpine Club Youth Club.</p>
+            <div class="client-tech">
+              <span>Next.js</span>
+              <span>Firebase</span>
+              <span>Google API</span>
+            </div>
+          </div>
+
+          <div class="client-card">
+            <div class="client-icon">📋</div>
+            <h3>Tax Filing Manager</h3>
+            <p class="client-org">Freelancers</p>
+            <p class="client-desc">Tax return data management and expense automation with GitHub Issue-based task tracking.</p>
+            <div class="client-tech">
+              <span>GitHub API</span>
+              <span>Automation</span>
             </div>
           </div>
         </div>
@@ -468,21 +533,32 @@ const features = [
 
   /* Terminal Preview (ADOS) */
   .terminal-preview {
-    width: 280px;
+    width: 100%;
+    max-width: 420px;
     background: #1e1e2e;
     border-radius: var(--radius-lg);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 40px rgba(139, 92, 246, 0.15);
     overflow: hidden;
+    border: 1px solid rgba(139, 92, 246, 0.2);
   }
 
   .terminal-preview-header {
     padding: 0.6rem 0.75rem;
     background: #181825;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
   }
 
   .terminal-preview-dots {
     display: flex;
     gap: 0.4rem;
+  }
+
+  .terminal-preview-title {
+    color: #6c7086;
+    font-size: 0.7rem;
+    font-weight: 500;
   }
 
   .tdot {
@@ -498,7 +574,7 @@ const features = [
   .terminal-preview-body {
     padding: 1rem;
     font-family: 'SF Mono', 'Fira Code', monospace;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     line-height: 1.8;
   }
 
@@ -509,6 +585,10 @@ const features = [
   .tprompt {
     color: #a6e3a1;
     font-weight: 700;
+  }
+
+  .ttime {
+    color: #6c7086;
   }
 
   .tinfo {
@@ -534,108 +614,141 @@ const features = [
 
   .phone-mockup {
     width: 280px;
-    height: 580px;
+    height: 560px;
     background: #1a1a1a;
     border-radius: 40px;
     padding: 12px;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   }
-  
+
   .phone-screen {
     width: 100%;
     height: 100%;
-    background: white;
+    background: #0f172a;
     border-radius: 30px;
     overflow: hidden;
   }
-  
+
   .screen-header {
-    background: #f3f4f6;
     padding: 0.5rem 1rem;
     text-align: center;
   }
-  
+
   .time {
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    color: #1f2937;
+    color: white;
   }
-  
+
   .app-ui {
-    padding: 1rem;
+    padding: 0 0.75rem 0.75rem;
   }
-  
+
   .app-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid #e5e7eb;
+    padding: 0.5rem 0;
+    color: white;
   }
-  
+
   .app-title {
     font-weight: 600;
-    color: #1f2937;
+    font-size: 0.95rem;
   }
-  
+
   .run-card {
     background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
     border-radius: 12px;
-    padding: 1rem;
+    padding: 0.75rem;
     color: white;
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
   }
-  
+
   .run-date {
-    font-size: 0.75rem;
+    font-size: 0.65rem;
     opacity: 0.9;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
-  
+
   .run-stats {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    text-align: center;
   }
-  
+
   .stat {
     text-align: center;
   }
-  
+
   .stat-value {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
   }
-  
+
   .stat-label {
-    font-size: 0.625rem;
+    font-size: 0.6rem;
     opacity: 0.8;
   }
-  
+
+  .weekly-bar {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 0.6rem 0.75rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .weekly-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.6rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .weekly-progress {
+    height: 5px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    margin-bottom: 0.25rem;
+  }
+
+  .weekly-fill {
+    width: 65%;
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #10b981);
+    border-radius: 3px;
+  }
+
+  .weekly-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.6rem;
+    font-weight: 600;
+  }
+
   .ai-chat {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.5rem;
   }
-  
+
   .ai-avatar {
-    width: 36px;
-    height: 36px;
-    background: #dbeafe;
+    width: 32px;
+    height: 32px;
+    background: rgba(59, 130, 246, 0.3);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1rem;
+    font-size: 0.9rem;
     flex-shrink: 0;
   }
-  
+
   .ai-message {
-    background: #f3f4f6;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    padding: 0.75rem;
-    font-size: 0.75rem;
-    color: #374151;
-    line-height: 1.5;
+    padding: 0.6rem;
+    font-size: 0.7rem;
+    color: white;
+    line-height: 1.4;
   }
   
   /* YAMAGO Badge */
@@ -653,7 +766,8 @@ const features = [
 
   /* Mountain Preview (YAMAGO) */
   .mountain-preview {
-    width: 280px;
+    width: 100%;
+    max-width: 360px;
     border-radius: var(--radius-lg);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     overflow: hidden;
@@ -662,7 +776,7 @@ const features = [
   .mountain-preview-scene {
     position: relative;
     width: 100%;
-    height: 220px;
+    height: 240px;
     background: linear-gradient(180deg, #7dd3fc 0%, #bae6fd 40%, #e0f2fe 70%);
     overflow: hidden;
   }
@@ -696,57 +810,25 @@ const features = [
     animation: mp-drift 25s ease-in-out infinite reverse;
   }
 
+  .mp-cloud-3 {
+    width: 35px;
+    top: 35%;
+    right: 40%;
+    animation: mp-drift 22s ease-in-out infinite;
+  }
+
   @keyframes mp-drift {
     0%, 100% { transform: translateX(0); }
     50% { transform: translateX(15px); }
   }
 
-  .mp-mountains {
+  .mp-scene-svg {
     position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
-    height: 75%;
-  }
-
-  .mp-mountain {
-    position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-  }
-
-  .mp-mountain-back {
-    left: 2%;
-    border-width: 0 90px 120px 90px;
-    border-color: transparent transparent #6b8e73 transparent;
-  }
-
-  .mp-mountain-mid {
-    left: 25%;
-    border-width: 0 85px 145px 85px;
-    border-color: transparent transparent #4a7c59 transparent;
-  }
-
-  .mp-mountain-front {
-    right: 2%;
-    border-width: 0 80px 115px 80px;
-    border-color: transparent transparent #3d6b4e transparent;
-  }
-
-  .mp-trail {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-  }
-
-  .mp-trail-svg {
     width: 100%;
     height: 100%;
+    z-index: 1;
   }
 
   .mp-overlay {
@@ -796,6 +878,76 @@ const features = [
   @keyframes mp-pulse {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.4; }
+  }
+
+  /* Client Work */
+  .client-work {
+    background-color: var(--color-bg);
+  }
+
+  .client-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .client-card {
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  }
+
+  .client-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .client-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .client-card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .client-org {
+    font-size: 0.8rem;
+    color: var(--color-text-lighter);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .client-desc {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .client-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .client-tech span {
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    background-color: var(--color-bg-dark);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .client-grid {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* CTA */

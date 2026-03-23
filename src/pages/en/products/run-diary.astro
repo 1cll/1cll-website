@@ -144,6 +144,13 @@ const garminFeatures = [
                       </div>
                     </div>
                   </div>
+                  <div class="weekly-bar">
+                    <div class="weekly-label">Weekly mileage</div>
+                    <div class="weekly-progress">
+                      <div class="weekly-fill"></div>
+                    </div>
+                    <div class="weekly-text">32.5 / 50 km</div>
+                  </div>
                   <div class="ai-chat">
                     <div class="ai-avatar">🤖</div>
                     <div class="ai-message">
@@ -157,7 +164,7 @@ const garminFeatures = [
         </div>
       </div>
     </section>
-    
+
     <!-- Features -->
     <section id="features" class="section features">
       <div class="container">
@@ -598,11 +605,44 @@ const garminFeatures = [
     opacity: 0.8;
   }
   
+  .weekly-bar {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 0.6rem 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .weekly-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.65rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .weekly-progress {
+    height: 5px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+    margin-bottom: 0.25rem;
+  }
+
+  .weekly-fill {
+    width: 65%;
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6, #10b981);
+    border-radius: 3px;
+  }
+
+  .weekly-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.65rem;
+    font-weight: 600;
+  }
+
   .ai-chat {
     display: flex;
     gap: 0.75rem;
   }
-  
+
   .ai-avatar {
     width: 40px;
     height: 40px;

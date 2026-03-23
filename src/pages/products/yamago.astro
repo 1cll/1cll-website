@@ -106,20 +106,31 @@ const techStack = [
                 <div class="sky">
                   <div class="cloud cloud-1"></div>
                   <div class="cloud cloud-2"></div>
+                  <div class="cloud cloud-3"></div>
                 </div>
-                <div class="mountains">
-                  <div class="mountain mountain-back"></div>
-                  <div class="mountain mountain-mid"></div>
-                  <div class="mountain mountain-front"></div>
-                </div>
-                <div class="trail-overlay">
-                  <svg viewBox="0 0 300 200" class="trail-svg">
-                    <path d="M 20 180 Q 60 160 80 140 Q 100 120 130 100 Q 160 80 180 70 Q 210 55 240 30" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 4" stroke-linecap="round"/>
-                    <circle cx="20" cy="180" r="5" fill="#22c55e"/>
-                    <circle cx="240" cy="30" r="5" fill="#ef4444"/>
-                    <circle cx="130" cy="100" r="4" fill="#f59e0b"/>
-                  </svg>
-                </div>
+                <svg class="mountain-svg" viewBox="0 0 420 280" preserveAspectRatio="xMidYMax slice">
+                  <!-- Back mountain -->
+                  <path d="M -30 280 L 80 85 Q 100 55 120 80 L 160 120 Q 175 100 190 108 L 270 280 Z" fill="#6b8e73"/>
+                  <path d="M 80 85 Q 100 55 120 80 L 112 92 Q 100 68 88 88 Z" fill="white" opacity="0.7"/>
+                  <!-- Mid mountain (tallest) -->
+                  <path d="M 100 280 L 210 40 Q 230 10 250 35 L 275 65 Q 290 50 300 58 L 380 280 Z" fill="#4a7c59"/>
+                  <path d="M 210 40 Q 230 10 250 35 L 242 50 Q 230 22 218 45 Z" fill="white" opacity="0.85"/>
+                  <path d="M 275 65 Q 282 55 290 58 L 286 67 Z" fill="white" opacity="0.5"/>
+                  <!-- Front mountain -->
+                  <path d="M 260 280 L 350 90 Q 370 60 390 85 L 415 115 Q 425 105 435 110 L 460 280 Z" fill="#3d6b4e"/>
+                  <path d="M 350 90 Q 370 60 390 85 L 382 98 Q 370 70 358 93 Z" fill="white" opacity="0.7"/>
+                  <!-- Tree silhouettes -->
+                  <path d="M 25 268 L 30 245 L 27 248 L 33 230 L 30 233 L 35 220 L 40 233 L 37 230 L 43 248 L 40 245 L 45 268 Z" fill="#2d5a3a" opacity="0.7"/>
+                  <path d="M 55 273 L 60 252 L 57 255 L 63 240 L 60 243 L 65 232 L 70 243 L 67 240 L 73 255 L 70 252 L 75 273 Z" fill="#2d5a3a" opacity="0.6"/>
+                  <path d="M 85 275 L 88 260 L 86 262 L 90 253 L 93 262 L 91 260 L 94 275 Z" fill="#2d5a3a" opacity="0.5"/>
+                  <path d="M 395 270 L 400 252 L 397 255 L 403 240 L 400 243 L 405 232 L 410 243 L 407 240 L 413 255 L 410 252 L 415 270 Z" fill="#1e4a2e" opacity="0.7"/>
+                  <path d="M 425 275 L 428 262 L 426 264 L 430 256 L 433 264 L 431 262 L 434 275 Z" fill="#1e4a2e" opacity="0.5"/>
+                  <!-- Trail -->
+                  <path d="M 25 260 Q 70 230 110 200 Q 150 170 190 145 Q 230 120 260 95 Q 285 75 310 50" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 4" stroke-linecap="round"/>
+                  <circle cx="25" cy="260" r="5" fill="#22c55e"/>
+                  <circle cx="190" cy="145" r="4" fill="#f59e0b"/>
+                  <circle cx="310" cy="50" r="5" fill="#ef4444"/>
+                </svg>
                 <div class="app-overlay">
                   <div class="app-stat">
                     <span class="app-stat-value">2,847m</span>
@@ -381,69 +392,25 @@ const techStack = [
     animation: cloud-drift 25s ease-in-out infinite reverse;
   }
 
+  .cloud-3 {
+    width: 50px;
+    top: 35%;
+    right: 45%;
+    animation: cloud-drift 22s ease-in-out infinite;
+  }
+
   @keyframes cloud-drift {
     0%, 100% { transform: translateX(0); }
     50% { transform: translateX(20px); }
   }
 
-  .mountains {
+  .mountain-svg {
     position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
-    height: 75%;
-  }
-
-  .mountain {
-    position: absolute;
-    bottom: 0;
-    width: 0;
-    height: 0;
-    border-style: solid;
-  }
-
-  .mountain-back {
-    left: 5%;
-    border-width: 0 120px 160px 120px;
-    border-color: transparent transparent #6b8e73 transparent;
-  }
-
-  :global([data-theme="dark"]) .mountain-back {
-    border-color: transparent transparent #2d4a32 transparent;
-  }
-
-  .mountain-mid {
-    left: 30%;
-    border-width: 0 110px 190px 110px;
-    border-color: transparent transparent #4a7c59 transparent;
-  }
-
-  :global([data-theme="dark"]) .mountain-mid {
-    border-color: transparent transparent #1e3d25 transparent;
-  }
-
-  .mountain-front {
-    right: 5%;
-    border-width: 0 100px 150px 100px;
-    border-color: transparent transparent #3d6b4e transparent;
-  }
-
-  :global([data-theme="dark"]) .mountain-front {
-    border-color: transparent transparent #163320 transparent;
-  }
-
-  .trail-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-  }
-
-  .trail-svg {
     width: 100%;
     height: 100%;
+    z-index: 1;
   }
 
   .app-overlay {
