@@ -47,7 +47,7 @@ const features = [
             AIを活用したスマートなソリューションで、あなたの目標達成をサポートします。
           </p>
           <div class="hero-buttons">
-            <a href="/products/run-diary" class="btn btn-primary">
+            <a href="#products" class="btn btn-primary">
               プロダクトを見る
             </a>
             <a href="/about" class="btn btn-secondary">
@@ -60,13 +60,87 @@ const features = [
     </section>
     
     <!-- Products Section -->
-    <section class="section products">
+    <section id="products" class="section products">
       <div class="container">
         <div class="section-title">
           <h2>プロダクト</h2>
           <p>私たちが開発したアプリ・サービス</p>
         </div>
-        
+
+        <div class="product-card ados-card">
+          <div class="product-content">
+            <span class="product-badge ados-badge">AI DevOps プラットフォーム</span>
+            <h3 class="product-title">ADOS</h3>
+            <p class="product-subtitle">AI DevOps as a Service</p>
+            <p class="product-description">
+              GitHub IssueをAIコーディングエージェントが自動処理し、Pull Requestを作成するまでの
+              ワークフローをオーケストレーション。複数リポジトリの監視からAI実行までを統合管理する
+              開発運用プラットフォームです。
+            </p>
+
+            <div class="product-features">
+              <div class="feature-item">
+                <span class="feature-icon">🔄</span>
+                <div>
+                  <h4>マルチリポジトリ</h4>
+                  <p>複数リポを単一プロセスで監視</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🤖</span>
+                <div>
+                  <h4>マルチAIエージェント</h4>
+                  <p>Copilot / Claude / Codex を自動切替</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">📅</span>
+                <div>
+                  <h4>スケジュール実行</h4>
+                  <p>cron式で定期タスクを自動実行</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🔍</span>
+                <div>
+                  <h4>SRE Agent</h4>
+                  <p>クラウドログ監視・自動修復</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-buttons">
+              <a href="/products/ados" class="btn btn-primary">
+                詳細を見る
+              </a>
+              <a href="https://ados.dev" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                ados.dev →
+              </a>
+            </div>
+          </div>
+
+          <div class="product-image">
+            <div class="terminal-preview">
+              <div class="terminal-preview-header">
+                <div class="terminal-preview-dots">
+                  <span class="tdot red"></span>
+                  <span class="tdot yellow"></span>
+                  <span class="tdot green"></span>
+                </div>
+              </div>
+              <div class="terminal-preview-body">
+                <div class="tline"><span class="tprompt">$</span> ados start</div>
+                <div class="tline"><span class="tinfo">INFO</span> Watching repos...</div>
+                <div class="tline"><span class="tinfo">INFO</span> Issue #42 detected</div>
+                <div class="tline"><span class="tagent">AGENT</span> AI processing...</div>
+                <div class="tline"><span class="tok">OK</span> PR #43 created</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-spacer"></div>
+
         <div class="product-card">
           <div class="product-content">
             <span class="product-badge">ランニングアプリ</span>
@@ -319,6 +393,76 @@ const features = [
     flex-wrap: wrap;
   }
   
+  /* Product Spacer */
+  .product-spacer {
+    height: 4rem;
+  }
+
+  /* ADOS Badge */
+  .ados-badge {
+    background: linear-gradient(135deg, var(--color-primary), #8B5CF6);
+  }
+
+  /* Terminal Preview (ADOS) */
+  .terminal-preview {
+    width: 280px;
+    background: #1e1e2e;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+  }
+
+  .terminal-preview-header {
+    padding: 0.6rem 0.75rem;
+    background: #181825;
+  }
+
+  .terminal-preview-dots {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .tdot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .tdot.red { background: #f38ba8; }
+  .tdot.yellow { background: #f9e2af; }
+  .tdot.green { background: #a6e3a1; }
+
+  .terminal-preview-body {
+    padding: 1rem;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 0.75rem;
+    line-height: 1.8;
+  }
+
+  .tline {
+    color: #bac2de;
+  }
+
+  .tprompt {
+    color: #a6e3a1;
+    font-weight: 700;
+  }
+
+  .tinfo {
+    color: #89b4fa;
+    font-weight: 600;
+  }
+
+  .tagent {
+    color: #cba6f7;
+    font-weight: 600;
+  }
+
+  .tok {
+    color: #a6e3a1;
+    font-weight: 600;
+  }
+
   /* Phone Mockup */
   .product-image {
     display: flex;
