@@ -196,9 +196,92 @@ const features = [
             </div>
           </div>
         </div>
+        <div class="product-spacer"></div>
+
+        <div class="product-card yamago-card">
+          <div class="product-content">
+            <span class="product-badge yamago-badge">総合登山プラットフォーム</span>
+            <h3 class="product-title">YAMAGO</h3>
+            <p class="product-subtitle">山へ行く人のためのアプリ</p>
+            <p class="product-description">
+              ルート計画からGPS追跡、緊急SOS、山岳気象、フィットネス管理、AI分析まで、
+              登山のすべてをカバーする総合プラットフォーム。130以上のモジュールと
+              333のテストで構築された信頼性の高いPWAアプリです。
+            </p>
+
+            <div class="product-features">
+              <div class="feature-item">
+                <span class="feature-icon">🗺️</span>
+                <div>
+                  <h4>AIルート計画</h4>
+                  <p>体力に合わせた最適ルート提案</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🆘</span>
+                <div>
+                  <h4>安全 & 緊急対応</h4>
+                  <p>ワンタップSOS・危険区域アラート</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🌤️</span>
+                <div>
+                  <h4>山岳気象</h4>
+                  <p>山特化の天気予報・装備推奨</p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <span class="feature-icon">🧠</span>
+                <div>
+                  <h4>AI/MLエンジン</h4>
+                  <p>疲労予測・リスク評価・チャットボット</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-buttons">
+              <a href="/products/yamago" class="btn btn-primary yamago-btn">
+                詳細を見る
+              </a>
+            </div>
+          </div>
+
+          <div class="product-image">
+            <div class="mountain-preview">
+              <div class="mountain-preview-scene">
+                <div class="mp-sky">
+                  <div class="mp-cloud mp-cloud-1"></div>
+                  <div class="mp-cloud mp-cloud-2"></div>
+                </div>
+                <div class="mp-mountains">
+                  <div class="mp-mountain mp-mountain-back"></div>
+                  <div class="mp-mountain mp-mountain-mid"></div>
+                  <div class="mp-mountain mp-mountain-front"></div>
+                </div>
+                <div class="mp-trail">
+                  <svg viewBox="0 0 280 220" class="mp-trail-svg">
+                    <path d="M 15 200 Q 50 170 75 145 Q 100 120 125 100 Q 155 75 175 60 Q 200 45 230 25" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="6 3" stroke-linecap="round"/>
+                    <circle cx="15" cy="200" r="4" fill="#22c55e"/>
+                    <circle cx="230" cy="25" r="4" fill="#ef4444"/>
+                  </svg>
+                </div>
+                <div class="mp-overlay">
+                  <div class="mp-stat">
+                    <span class="mp-stat-val">2,847m</span>
+                  </div>
+                  <div class="mp-gps">
+                    <span class="mp-gps-dot"></span>
+                    GPS
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-    
+
     <!-- Company Section -->
     <section class="section company">
       <div class="container">
@@ -554,6 +637,166 @@ const features = [
     }
   }
   
+  /* YAMAGO Badge */
+  .yamago-badge {
+    background: linear-gradient(135deg, #16a34a, #ca8a04);
+  }
+
+  .yamago-btn {
+    background: linear-gradient(135deg, #16a34a, #15803d);
+  }
+
+  .yamago-btn:hover {
+    background: linear-gradient(135deg, #15803d, #166534);
+  }
+
+  /* Mountain Preview (YAMAGO) */
+  .mountain-preview {
+    width: 280px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+  }
+
+  .mountain-preview-scene {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(180deg, #7dd3fc 0%, #bae6fd 40%, #e0f2fe 70%);
+    overflow: hidden;
+  }
+
+  .mp-sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+  }
+
+  .mp-cloud {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50px;
+    height: 12px;
+  }
+
+  .mp-cloud-1 {
+    width: 60px;
+    top: 25%;
+    left: 15%;
+    animation: mp-drift 20s ease-in-out infinite;
+  }
+
+  .mp-cloud-2 {
+    width: 45px;
+    top: 15%;
+    right: 20%;
+    animation: mp-drift 25s ease-in-out infinite reverse;
+  }
+
+  @keyframes mp-drift {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(15px); }
+  }
+
+  .mp-mountains {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 75%;
+  }
+
+  .mp-mountain {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+
+  .mp-mountain-back {
+    left: 2%;
+    border-width: 0 90px 120px 90px;
+    border-color: transparent transparent #6b8e73 transparent;
+  }
+
+  .mp-mountain-mid {
+    left: 25%;
+    border-width: 0 85px 145px 85px;
+    border-color: transparent transparent #4a7c59 transparent;
+  }
+
+  .mp-mountain-front {
+    right: 2%;
+    border-width: 0 80px 115px 80px;
+    border-color: transparent transparent #3d6b4e transparent;
+  }
+
+  .mp-trail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+  }
+
+  .mp-trail-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mp-overlay {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 3;
+  }
+
+  .mp-stat {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius-sm);
+    padding: 0.3rem 0.5rem;
+  }
+
+  .mp-stat-val {
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+
+  .mp-gps {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius-sm);
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: white;
+    font-size: 0.7rem;
+  }
+
+  .mp-gps-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #22c55e;
+    animation: mp-pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes mp-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
   /* Company */
   .company-content {
     display: grid;
